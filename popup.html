@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <img src="icons/icon48.png" alt="icon" class="popup-icon">
+      <h1>智能數字選取合計</h1>
+    </div>
+
+    <div class="popup-section">
+      <p class="popup-desc">框選螢幕上的數字，自動辨識並計算總和</p>
+    </div>
+
+    <div class="popup-section">
+      <h2>使用方式</h2>
+      <div class="shortcut-item">
+        <span class="shortcut-label">快捷鍵</span>
+        <kbd id="shortcut-display">Ctrl+Shift+S</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span class="shortcut-label">右鍵選單</span>
+        <span class="shortcut-hint">右鍵 → 智能數字選取合計</span>
+      </div>
+    </div>
+
+    <div class="popup-actions">
+      <button id="btn-activate" class="btn btn-primary">開始選取</button>
+      <button id="btn-settings" class="btn btn-secondary">設定</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

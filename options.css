@@ -1,0 +1,131 @@
+/* === Options Page Styles === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  min-height: 100vh;
+}
+
+.options-container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.options-header {
+  margin-bottom: 24px;
+}
+
+.options-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.options-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.options-card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.options-note {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.shortcut-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+kbd {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-family: monospace;
+  color: #4A90D9;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary {
+  background: #4A90D9;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #357ABD;
+}
+
+.options-hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* 使用步驟 */
+.usage-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  background: #4A90D9;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.options-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 12px;
+  color: #bbb;
+}

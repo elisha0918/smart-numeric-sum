@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "智能數字選取合計",
+  "version": "1.0.0",
+  "description": "框選螢幕上的數字，自動 OCR 辨識並計算總和",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "offscreen",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "activate-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "啟動數字選取模式"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lib/*",
+        "lang-data/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

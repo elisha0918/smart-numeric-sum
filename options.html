@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>智能數字選取合計 - 設定</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <div class="options-header">
+      <h1>智能數字選取合計 - 設定</h1>
+    </div>
+
+    <div class="options-card">
+      <h2>快捷鍵設定</h2>
+      <p class="options-note">
+        Chrome 擴充功能的快捷鍵需透過瀏覽器設定頁面修改。
+      </p>
+      <div class="shortcut-display">
+        <span>目前快捷鍵：</span>
+        <kbd id="current-shortcut">Ctrl+Shift+S</kbd>
+      </div>
+      <button id="btn-open-shortcuts" class="btn btn-primary">
+        開啟 Chrome 快捷鍵設定
+      </button>
+      <p class="options-hint">
+        點擊上方按鈕後，找到「智能數字選取合計」並修改快捷鍵。
+      </p>
+    </div>
+
+    <div class="options-card">
+      <h2>使用說明</h2>
+      <div class="usage-steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <span>按下快捷鍵或右鍵選單啟動選取模式</span>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <span>拖曳滑鼠框選包含數字的區域</span>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <span>等待 OCR 辨識完成，查看計算結果</span>
+        </div>
+        <div class="step">
+          <span class="step-num">4</span>
+          <span>點擊複製按鈕即可複製合計數值</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="options-footer">
+      <span>Smart Numeric Sum Extension v1.0.0</span>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

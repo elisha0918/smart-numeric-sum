@@ -1,0 +1,267 @@
+/* === Smart Numeric Sum - Content Script Styles === */
+
+/* 全螢幕 overlay */
+#smart-sum-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  cursor: crosshair;
+  z-index: 2147483646;
+  user-select: none;
+}
+
+/* 選取框 */
+#smart-sum-selection {
+  position: absolute;
+  border: 2px dashed #4A90D9;
+  background: rgba(74, 144, 217, 0.15);
+  display: none;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* 提示文字 */
+#smart-sum-hint {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+/* 結果浮動視窗 */
+#smart-sum-result {
+  position: fixed;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-width: 260px;
+  max-width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  animation: smartSumFadeIn 0.2s ease-out;
+}
+
+@keyframes smartSumFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 標題列（可拖曳） */
+.smart-sum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #4A90D9, #357ABD);
+  color: #fff;
+  cursor: grab;
+  user-select: none;
+}
+
+.smart-sum-header:active {
+  cursor: grabbing;
+}
+
+.smart-sum-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.smart-sum-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.smart-sum-close:hover {
+  opacity: 1;
+}
+
+/* 統計區域 */
+.smart-sum-stats {
+  padding: 14px;
+}
+
+.smart-sum-stat-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.smart-sum-stat-main label {
+  font-size: 13px;
+  color: #666;
+  min-width: 36px;
+}
+
+.smart-sum-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4A90D9;
+  flex: 1;
+}
+
+.smart-sum-copy {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.smart-sum-copy:hover {
+  background: #f0f0f0;
+}
+
+.smart-sum-stat-row {
+  display: flex;
+  gap: 20px;
+}
+
+.smart-sum-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.smart-sum-stat label {
+  font-size: 12px;
+  color: #999;
+}
+
+.smart-sum-stat span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* 數字清單 */
+.smart-sum-numbers {
+  padding: 0 14px 14px;
+}
+
+.smart-sum-numbers label {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.smart-sum-num-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.smart-sum-num {
+  background: #f0f4f8;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #4A90D9;
+  font-weight: 500;
+}
+
+/* 空結果 */
+.smart-sum-empty {
+  padding: 20px 14px;
+  text-align: center;
+  color: #999;
+}
+
+.smart-sum-raw {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #bbb;
+  word-break: break-all;
+}
+
+/* 原始文字 */
+.smart-sum-details {
+  padding: 0 14px 14px;
+}
+
+.smart-sum-details summary {
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
+}
+
+.smart-sum-raw-wrap {
+  position: relative;
+  margin-top: 6px;
+}
+
+.smart-sum-raw-wrap pre {
+  margin: 0;
+  padding: 8px 36px 8px 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.smart-sum-copy-raw {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.smart-sum-copy-raw:hover {
+  background: #e8e8e8;
+}
+
+/* 載入中 */
+.smart-sum-loading {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+}
+
+.smart-sum-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #4A90D9;
+  border-radius: 50%;
+  animation: smartSumSpin 0.8s linear infinite;
+}
+
+@keyframes smartSumSpin {
+  to { transform: rotate(360deg); }
+}
